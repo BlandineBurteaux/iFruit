@@ -13,6 +13,6 @@ Liste en v-for :
 Création d'un filter : 
 * format des prix (0,00)
 
-<a href="http://mangooste.fr/ifruit">Démo</a>
+<a href="http://mangooste.fr/ifruit" target="_blank">Démo</a>
 
 <img src="http://mangooste.fr/assets/images/ifruit.png" />
