@@ -1,0 +1,25 @@
+body {
+    padding: 2vw;
+}
+
+.logo {
+    width: 3rem;
+}
+
+.fruit, .fruit-baskets, #total {
+    background: #f1f1f2;
+    margin-bottom: 2vh;
+    padding: 2vw;
+}
+
+.fruit-title {
+    font-size: 1.5rem;
+}
+
+.fruit-price {
+    font-size: 2rem;
+}
+
+.fruit-amount {
+    margin: 2vh 0;
+}

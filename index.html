@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>IFruit</title>
+    <meta name="author" content="Blandine Burteaux" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="node_modules/numeral/min/numeral.min.js"></script>
+</head>
+
+<body>
+    <div id="ifruit">
+        <ifruit-header></ifruit-header>
+        
+        <div class="row">
+            <div id="fruits" class="col-md-7">
+                <div class="fruit" v-for="fruit in fruits">
+                    <div class="pull-left col-md-8">
+                        <div class="fruit-title">{{fruit.title}}</div>
+                        <div class="fruit-description">{{fruit.description}}</div>
+                    </div>
+                    <div class="pull-left col-md-4">
+                        <div class="fruit-price text-center"><i class="fa fa-dollar"></i>{{fruit.price | formatPrice}}</div>
+                        <div class="fruit-amount text-center">
+                            <button class="btn btn-outline-primary" v-on:click="fruit.amount--">-</button>
+                            <input class="text-center" type="number" min="1" max="99" v-model="fruit.amount" />
+                            <button class="btn btn-outline-primary" v-on:click="fruit.amount++">+</button>
+                        </div>
+                        <div class="fruit-buy text-center">
+                            <button class="btn btn-primary" v-on:click="buy(fruit.id, fruit.amount)"><i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            
+            <div id="basket" class="col-md-5">
+                <div class="fruit-baskets">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Désignation</th>
+                                <th>Qté</th>
+                                <th>PU</th>
+                                <th>Total</th>
+                            </tr>
+                            <tr v-for="fruitBasket in fruitsBasket">
+                                <td>{{fruitBasket.fruit.title}}</td>
+                                <td>{{fruitBasket.amount}}</td>
+                                <td>{{fruitBasket.fruit.price | formatPrice}}</td>
+                                <td>{{fruitBasket.fruit.price*fruitBasket.amount | formatPrice}}</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="total">
+                    <div class="pull-right">
+                        <i class="fa fa-dollar"></i>{{total | formatPrice}}
+                    </div>
+                    <div>
+                        Total                       
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        
+        <ifruit-footer></ifruit-footer>
+    </div>
+    
+    <script src="assets/js/fruits.js"></script>
+    <script src="assets/js/components/common.js"></script>
+    <script src="assets/js/filters.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

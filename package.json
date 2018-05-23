@@ -1,0 +1,22 @@
+{
+  "name": "ifruit",
+  "version": "1.0.0",
+  "description": "gestion de panier en vueJS",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "numeral": "^2.0.6",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cards",
+    "vueJS"
+  ],
+  "author": "Blandine Burteaux",
+  "license": "ISC"
+}
